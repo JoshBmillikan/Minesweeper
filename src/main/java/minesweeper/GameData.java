@@ -8,16 +8,24 @@ public class GameData implements Serializable {
     private Tile[][] tiles;
 
 
+    public void Lose() {
+
+    }
+
     public GameData(GameSettings settings, final long seed) {
         this.settings = settings;
+    }
+
+    public Tile getTile(final int x, final int y) {
+        return tiles[x][y];
     }
 
     public void Generate(final long seed) {
         var rand = new Random(seed);
         tiles = new Tile[settings.sizeX][settings.sizeY];
-        for(var column : tiles) {
-            for(int i=0;i<column.length;i++)
-                column[i] = new Tile(rand.nextBoolean());
+        for(int i=0;i<tiles.length;i++) {
+            for(int j=0;j<tiles[i].length;j++)
+                tiles[i][j] = new Tile(rand.nextBoolean(),i,j);
         }
         for(var column : tiles) {
             for(var tile : column)
