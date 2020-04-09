@@ -6,8 +6,8 @@ public class Tile {
     private int NumberOfAdjacentMines = 0;
     private boolean isRevealed = false;
 
-    Tile(final boolean isMine, final int x, final int y) {
-        this.isMine = isMine;
+    Tile(final int mineChance, final int x, final int y) {
+        this.isMine = mineChance > Main.game.getDifficulty().threshold;
         this.x = x;
         this.y = y;
     }
@@ -24,7 +24,7 @@ public class Tile {
 
     void Scan() {
         var game = Main.game;
-        if(game != null) {
+        if(game != null) { //todo handle nulls
             if(game.getTile(x+1,y).isMine)
                 NumberOfAdjacentMines++;
             if(game.getTile(x-1,y).isMine)

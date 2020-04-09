@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fx.Window"
-    prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="400.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.Window">
+   <children>
+      <VBox layoutX="105.0" layoutY="114.0" prefHeight="199.0" prefWidth="222.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="114.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#open" prefHeight="0.0" prefWidth="289.0" text="Start" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label text="Width" />
+            <Spinner fx:id="width" prefHeight="25.0" prefWidth="67.0" />
+            <Label text="Heigh" />
+            <Spinner fx:id="height" prefHeight="25.0" prefWidth="67.0" />
+            <Label text="Difficulty" />
+            <ChoiceBox fx:id="difficulty" prefHeight="25.0" prefWidth="109.0" />
+            <Label text="Custom Seed" />
+            <TextField fx:id="seedBox" prefHeight="25.0" prefWidth="112.0" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
